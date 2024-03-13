@@ -1,8 +1,7 @@
 ---
-- hosts: all
-  tasks:
+- hosts: all # This playbook will be failed 
+  tasks: 
    - name: install Git on myAnsible-Node01 machine
      apt:
-      - name: Git
-        state: present 
-        
+      name: Git
+      state: present 
