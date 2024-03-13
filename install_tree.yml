@@ -3,8 +3,8 @@
 - hosts: all
   become: yes
   tasks:
-  - name: Install tree software on myAnsible-Node01 Machine
-    apt:
-      name: tree
-      state: present 
+    - name: Install tree software on myAnsible-Node01 Machine
+      apt:
+        name: tree
+        state: present 
       
