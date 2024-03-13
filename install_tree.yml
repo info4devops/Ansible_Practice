@@ -1,0 +1,10 @@
+# This playbook is about to install tree software on ansible managed nodes
+---
+- hosts: all
+  become: yes
+  tasks: 
+  - name: Install tree software on myAnsible-Node01 machine
+    apt:
+     name: tree
+     state: present 
+     
