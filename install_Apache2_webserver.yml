@@ -1,0 +1,10 @@
+# This playbook is about installing apache2 software on ansible node
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Insatlling Apache2 Software on myAnsible-Node01 Machine
+    apt:
+    - name: apache2
+      state: present 
+      
