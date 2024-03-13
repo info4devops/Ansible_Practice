@@ -1,3 +1,5 @@
+# This playbook is about install git on Ansible managed nodes
+
 ---
 - hosts: all # This playbook will be failed 
   tasks: 
