@@ -1,0 +1,10 @@
+# install webserver using group variable
+---
+- hosts: web_servers
+  become: true
+  tasks:
+  - name: i want to install tree software
+    apt:
+      name: "{{mywebpack}}"
+      state: absent
+      
