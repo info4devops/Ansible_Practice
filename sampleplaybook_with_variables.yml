@@ -1,0 +1,17 @@
+# This playbook is to demonstrate about variable in ansible
+---
+- name: Ansible Simple variable Usage
+  hosts: web_servers
+  become: yes
+
+  # intialize variables using "vars"
+
+  vars:
+    greeting: Good Morning
+
+  tasks:
+  - name: Ansible Simple variable Usage
+
+    # Debug module is user to check the output on console using msg
+    debug:
+       msg: Hello Guys, "{{greeting}}"
