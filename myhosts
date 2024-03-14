@@ -5,4 +5,4 @@
 
 # Variable details
 [webservers:vars]  # 'Variables' should be 'vars'
-mywebpack2: apache2  # Use '=' to assign values to variables instead of ':'
+mywebpack2= apache2  # Use '=' to assign values to variables instead of ':'
