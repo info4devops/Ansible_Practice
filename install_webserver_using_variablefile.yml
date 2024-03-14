@@ -5,9 +5,9 @@
 
   tasks:
   - include_vars: variables.yml
-  - name: Installing webserver 
+  - name: Installing apache2 
     apt:
-       name: '{{package_name}}' 
+       name: "{{package_name}}"
        update_cache: yes
        state: latest
 
