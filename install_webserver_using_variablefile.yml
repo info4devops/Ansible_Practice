@@ -5,10 +5,10 @@
   become: yes
 
   tasks:
-  - name: Installing webserver 
   - include_vars: variables.yml
+  - name: Installing webserver 
     apt:
        name: '{{ package_name }}' 
        update_cache: yes
        state: latest
-       
+
