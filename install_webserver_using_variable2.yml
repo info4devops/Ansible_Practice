@@ -7,4 +7,4 @@
     - name: Installing Apache  # A human-readable name for the task
       apt:  # Ansible module used to manage packages on Debian-based systems
         name: "{{ mywebpack2 }}"  # Package name to install, referenced from inventory variable
-        state: present   # Desired state of the package (present, in this case)
+        state: absent   # Desired state of the package (present, in this case)
