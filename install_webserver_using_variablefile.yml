@@ -1,0 +1,14 @@
+# This playbook is about installing webserver using variables file
+---
+- name: installing webserver using variables file
+  hosts: myhosts
+  become: yes
+
+  tasks:
+  - name: Installing webserver 
+  - include_vars: variables.yml
+    apt:
+       name: '{{ package_name }}' 
+       update_cache: yes
+       state: latest
+       
