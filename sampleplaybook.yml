@@ -1,6 +1,6 @@
 # This is just a sample playbook
 ---
-- hosts: all
+- hosts: web_servers
   become: yes
   tasks:
   - name: install nginx
