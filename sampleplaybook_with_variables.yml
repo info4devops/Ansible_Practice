@@ -14,4 +14,4 @@
 
     # Debug module is user to check the output on console using msg
     debug:
-       msg: Hello Guys, "{{greeting}}"
+       msg: "Hello Guys, {{ greeting }}"
