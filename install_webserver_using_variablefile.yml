@@ -7,12 +7,12 @@
   - include_vars: variables.yml
   - name: Installing apache2 
     apt:
-       name: "{{package_name}}"
-       update_cache: yes
-       state: latest
+      name: "{{package_name}}"
+      update_cache: yes
+      state: latest
   
-  - name: Installing apache2 
-    service::
-       name: "{{package_name}}"
-       state: stopped
+  - name: start service 
+    service:
+      name: "{{package_name}}"
+      state: stopped
 
