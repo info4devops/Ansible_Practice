@@ -1,0 +1,10 @@
+# This is a YAML file specifying an Ansible playbook
+---
+- hosts: webservers  # Specifies the group of hosts to target, defined in the inventory file
+  become: yes  # Indicates that tasks should run with elevated privileges (e.g., sudo)
+
+  tasks:  # List of tasks to execute on the targeted hosts
+    - name: Installing Apache  # A human-readable name for the task
+      apt:  # Ansible module used to manage packages on Debian-based systems
+        name: "{{ mywebpack2 }}"  # Package name to install, referenced from inventory variable
+        state: stopped  # Desired state of the package (stopped, in this case)

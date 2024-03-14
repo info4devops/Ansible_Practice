@@ -14,5 +14,6 @@
   - name: start service 
     service:
       name: "{{package_name}}"
-      state: stopped
+      state: started
+      
 

@@ -1,7 +1,8 @@
 # Host details
+
 [webservers]
 10.0.0.5
 
 # Variable details
-[webservers: Variables]
-mywebpack2: apache2
+[webservers:vars]  # 'Variables' should be 'vars'
+mywebpack2=apache2  # Use '=' to assign values to variables instead of ':'
