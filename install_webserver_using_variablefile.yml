@@ -1,6 +1,6 @@
 # This playbook is about installing webserver using variables file
 ---
-- hosts: all
+- hosts: all # mentione host details here or in other file
   become: yes
 
   tasks:
