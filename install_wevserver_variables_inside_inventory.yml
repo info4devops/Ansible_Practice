@@ -5,11 +5,6 @@
   become: yes
 
   tasks:
-  - name: Installing tomcat 
-    apt:
-      name: "{{mywebpack}}"
-      state: present 
-  
   - name: Installing apache 
     apt:
       name: "{{mywebpack2}}"
