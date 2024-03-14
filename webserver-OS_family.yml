@@ -3,6 +3,8 @@
 - name: install webservers on node based on OS_family
   hosts: all
   become: yes
+
+  # Install webserver on ubuntu
   tasks:
   - name: I want to install apache2 webserver on ansible ubuntu node
     apt: 
@@ -10,8 +12,25 @@
        state: present 
     when: ansible_os_family=="Debian"
 
+# To start the serveices
   - name: I want to start the webserver
     service: 
        name: apache2
-       state: stoped 
+       state: started 
     when: ansible_os_family=="Debian"
+
+  # Install webserver on Redhat
+  - name: I want to install httpd webserver on ansible Redhat node
+    dnf: # similar to apr module for redhat machines
+       name: httpd
+       state: present 
+    when: ansible_os_family=="RedHat"
+
+# To start the serveices
+  - name: I want to start the webserver
+    service: 
+       name: httpd
+       state: started 
+    when: ansible_os_family=="RedHat"
+
+  
