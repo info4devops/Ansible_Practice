@@ -1,0 +1,18 @@
+# This playbook is about installing webserver using variables mentioned inside inventory file
+
+---
+- hosts: all # mentione host details here or in other file
+  become: yes
+
+  tasks:
+  - name: Installing tomcat 
+    apt:
+      name: "{{mywebpack}}"
+      state: present 
+  
+  - name: Installing apache 
+    apt:
+      name: "{{mywebpack2}}"
+      state: stopped
+       
+    

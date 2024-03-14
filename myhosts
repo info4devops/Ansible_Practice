@@ -1,1 +1,8 @@
+# Host details
+[webservers]
 10.0.0.5
+
+# Variable details
+[webservers: Variables]
+mywebpack: tomcat
+mywebpack2: apache2
