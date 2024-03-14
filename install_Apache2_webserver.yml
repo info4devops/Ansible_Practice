@@ -6,4 +6,4 @@
     - name: Insatlling Apache2 Software on myAnsible-Node01 Machine
       apt:
         name: apache2
-        state: present 
+        state: absent # change to "absent" to remove the webserver
