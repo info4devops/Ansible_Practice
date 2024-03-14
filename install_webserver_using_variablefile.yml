@@ -1,10 +1,10 @@
 # This playbook is about installing webserver using variables file
 ---
-- hosts: web_servers
+- hosts: all
   become: yes
 
   tasks:
-  - include_vars: variables.yml
+  - include_vars: myvars.yml
   - name: Installing apache2 
     apt:
       name: "{{package_name}}"
