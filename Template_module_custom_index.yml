@@ -2,11 +2,10 @@
 # pre-requisites: custom index file with .j2 extension
 
 ---
-- host: all
+- hosts: all
   become: yes
   tasks: 
-  - name: Copy Custom index file on Ansible node
-    template: 
-       src: custom_index.j2 # custom index file present in current working directory
-       dest: /var/www/html/index.html
-       
+    - name: Copy Custom index file on Ansible node
+      template: 
+        src: custom_index.j2  # custom index file present in current working directory
+        dest: /var/www/html/index.html
