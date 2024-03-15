@@ -1,5 +1,5 @@
 --- 
-- hosts: myappservers
+- hosts: all
   become: yes
   roles: 
   - {role: mytomcatrole, when: ansible_os_family=="debian"}
