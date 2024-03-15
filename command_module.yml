@@ -1,0 +1,7 @@
+# This playbook is about to demonstarte about command module
+---
+- hosts: 10.0.0.5
+  become: yes
+  tasks:
+  - name: I want to execute Linux Commands on Ansible node
+    command: hostname -f 
