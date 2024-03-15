@@ -11,11 +11,10 @@
       
       # Handlers will get notification using notify
       notify:
-      - Restart webserver
+        - Restart webserver
 
-    handlers:
+  handlers:
     - name: Restart webserver
       service:
          name: apache2
          state: restarted
-         
