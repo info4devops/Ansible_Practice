@@ -7,7 +7,7 @@
     - name: Install webserver
       apt:
          name: apache2
-         state: present
+         state: absent
       
       # Handlers will get notification using notify
       notify:
