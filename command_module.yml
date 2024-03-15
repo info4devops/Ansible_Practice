@@ -11,5 +11,5 @@
   # To display the results on console
   - name: I want to Display the Linux command output
     debug:
-      msg: "{{my_first_task_result}}"
+      msg: "{{ my_first_task_result.stdout }}"
   
