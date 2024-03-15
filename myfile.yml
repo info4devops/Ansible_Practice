@@ -1,0 +1,7 @@
+# This is to create a file
+---
+- name: Create a file
+  file:
+    path: /home/vamsi/mySecond_file
+    state: touch
+    
