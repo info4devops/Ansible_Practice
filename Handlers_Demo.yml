@@ -1,0 +1,21 @@
+# This about Handlers demo purpose
+
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install webserver
+      apt:
+         name: apache2
+         state: absent
+      
+      # Handlers will get notification using notify
+      notify:
+      - Restart webserver
+
+    handlers:
+    - name: Restart webserver
+      service:
+         name: apache2
+         state: restarted
+         
