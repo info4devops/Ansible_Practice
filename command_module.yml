@@ -8,6 +8,8 @@
     command: hostname -f 
     register: my_first_task_result # used to hold the command output
 
+  # To display the results on console
   - name: I want to Display the Linux command output
     debug:
       msg: "{{my_first_task_result}}"
+  
