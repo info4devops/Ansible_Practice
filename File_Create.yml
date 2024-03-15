@@ -1,0 +1,14 @@
+# This playbook is about file handling
+# File Creation
+
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Create a file
+    file:
+       path: /home/vamsi/myfirst_file
+       state: touch
+       
+
+      
