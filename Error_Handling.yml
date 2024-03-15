@@ -11,9 +11,7 @@
     - name: Install wget
       apt:
         name: wget
-        statee: present # it will give an Error because of spelling mistake in "statee"
+        statee: present  # It will give error due to spelling mistake in 'statee'
     
       # Error Handling
-      ignore_error: yes 
-
-
+      ignore_errors: yes  # This will ignore the error
