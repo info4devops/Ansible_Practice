@@ -8,7 +8,11 @@
       name: git
       state: absent
   
-  - name: Install tree
+  - name: Install wget
     apt:
-      name: tree
-      statee: absent # it will give an Error because of spelling mistake in "statee"
+      name: wget
+      statee: present # it will give an Error because of spelling mistake in "statee"
+    
+    # Error Handling
+    ignore_error: yes 
+
