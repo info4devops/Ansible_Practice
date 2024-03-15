@@ -1,2 +1,8 @@
 ---
 # tasks file for mywebrole_demo
+
+- name: i want to install wget on ansible node
+  apt: 
+    name: wget
+    state: present
+    
