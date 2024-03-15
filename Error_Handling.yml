@@ -3,17 +3,17 @@
 - hosts: all
   become: yes
   tasks:
-  - name: Install git
-    apt:
-      name: git
-      state: absent
+    - name: Install git
+      apt:
+        name: git
+        state: absent
   
-  - name: Install wget
-    apt:
-      name: wget
-      statee: present # it will give an Error because of spelling mistake in "statee"
+    - name: Install wget
+      apt:
+        name: wget
+        statee: present # it will give an Error because of spelling mistake in "statee"
     
-    # Error Handling
-    ignore_error: yes 
-    
+      # Error Handling
+      ignore_error: yes 
+
 
