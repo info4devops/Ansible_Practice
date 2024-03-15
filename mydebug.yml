@@ -1,0 +1,34 @@
+# This playbook is about to demonstarte about command module and based on output change the flow of execution by using conditions
+
+---
+- hosts: 10.0.0.5
+  become: yes
+  tasks:
+  # Executing the linux command
+  - name: I want to execute Linux Commands on Ansible node
+    command: hostname -f 
+    register: my_first_task_result # used to hold the command output
+
+  # To display the results on console
+  - name: I want to Display the Linux command output
+    debug:
+      msg: "{{my_first_task_result}}"
+  
+  # I want to install git
+  - name: I want to install git
+    apt: 
+      name: git
+      state: present 
+    when: my_first_task_result.stderr != "" # if "stderr" value is not equal to empty then git will install
+  
+  # I want to install tree
+  - name: I want to install tree
+    apt: 
+      name: tree
+      state: present 
+    when: my_first_task_result.stderr = "" # if "stderr" value is equal to empty then tree will install
+
+
+  
+    
+  
