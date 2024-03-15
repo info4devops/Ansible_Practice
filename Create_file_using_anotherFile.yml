@@ -3,6 +3,5 @@
 - hosts: all
   become: yes
   tasks:
-  - name: Create File using another file
-  - include_tasks: myfile.yml # name of the file where file creation code is written
-  
+    - name: Create File using another file
+    - include_tasks: myfile.yml # name of the file where file creation code is written
