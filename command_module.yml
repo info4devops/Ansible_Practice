@@ -3,5 +3,11 @@
 - hosts: web_servers
   become: yes
   tasks:
+  # Executing the linux command
   - name: I want to execute Linux Commands on Ansible node
     command: hostname -f 
+    register: my_first_task_result # used to hold the command output
+
+  - name: I want to Display the Linux command output
+    debug:
+      msg: "{{my_first_task_result}}"
