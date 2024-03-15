@@ -1,0 +1,10 @@
+# This is to copy file 
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Copy file
+    copy:
+       src: mytest_file # copy this file present in current directory
+       dest: /home/vamsi/f1/ # copy to this location on ansible node machine
+       
