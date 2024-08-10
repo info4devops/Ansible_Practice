@@ -1,6 +1,8 @@
 ---
 - hosts: all
   become: true
+  vars:
+    salute: Hey, Guys!
   tasks:
     - name: Run the df command
       command: df -h
@@ -9,3 +11,4 @@
     - name: Print the disk space output
       debug:
         msg: "{{ disk_space_output.stdout }}"
+        msg: "{{ salute }}. Welcome to Ansible World"
