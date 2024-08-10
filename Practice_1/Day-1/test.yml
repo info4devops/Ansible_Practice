@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  vars:
+    salute: Hey, Guys!
+  tasks:
+    - name: Run the df command
+      command: df -h
+      register: disk_space_output
+
+    - name: Print the disk space output
+      debug:
+        msg: "{{ salute }}. Welcome to Ansible World"
