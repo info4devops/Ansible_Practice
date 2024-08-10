@@ -3,9 +3,9 @@
   become: true
   tasks:
     - name: Run the df command
-      command: df-h
+      command: df -h
       register: disk_space_output
-    - name: Print the disk space output 
-      debug:
-        msg: "{{ disk_space_output.stdout}}"
 
+    - name: Print the disk space output
+      debug:
+        msg: "{{ disk_space_output.stdout }}"
