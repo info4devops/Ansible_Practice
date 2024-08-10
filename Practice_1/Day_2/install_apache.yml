@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+   - include_vars: vars.yml
+   - name: Install apache222
+     ansible.builtin.apt:
+       name: {{package_name}}
+       update_cache: yes
+       state: latest
