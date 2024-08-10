@@ -1,16 +1,16 @@
 ---
-- hosts:
-  become: yes
+- hosts: all
+  become: true
   tasks:
-  - name: install nginx
-    apt:
-      name: nginx
+  - name: install apache httpd
+    ansible.builtin.apt:
+      name: apache2
       state: present
-  - name: start server
-    service: 
-      name: nginx
-      state: started
-
-
-
-
+      update_cache: yes
+  - name: Copy file with owner and permission
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html
+      owner: root
+      group: root
+      mode: '0644'
