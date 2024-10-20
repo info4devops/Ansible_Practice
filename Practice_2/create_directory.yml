@@ -1,0 +1,9 @@
+---
+- name: Create a directory on host machine
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create directory
+      file:
+        path: /home/ubuntu/dir1
+        state: directory

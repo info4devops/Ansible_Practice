@@ -1,0 +1,10 @@
+---
+- name: Coping custom index file using template module
+  hosts: all
+  become: yes
+  tasks: 
+    - name: copy custom index file
+      template:
+        src: custom_index.j2
+        dest: /var/www/html/index.html
+        

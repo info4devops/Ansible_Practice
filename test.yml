@@ -1,3 +1,28 @@
 ---
-var01: value
-mywebpack: apache2
+- name: Configure Nginx Web Server
+  hosts: webservers
+  become: yes  # Use sudo to execute tasks
+  
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+      notify: Start Nginx  # Notify handler to start Nginx if it's installed
+
+    - name: Deploy Nginx configuration file
+      template:
+        src: /path/to/nginx.conf.j2  # Path to the Jinja2 template
+        dest: /etc/nginx/nginx.conf    # Destination for the configuration file
+      notify: Restart Nginx  # Notify handler to restart Nginx if the config changes
+
+  handlers:
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
