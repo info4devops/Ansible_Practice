@@ -1,0 +1,10 @@
+---
+- name: Installing Java Using Host Variables Concept 
+  hosts: mywebservers # Host Group name
+  become: yes
+  tasks:
+   - name: install Java 
+     apt:
+       name: '{{ my_java_pack_on_ubuntu }}' # calling variable using it name 
+       update_cache: yes
+       state: present

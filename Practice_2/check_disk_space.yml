@@ -1,0 +1,11 @@
+---
+- name: Checking Disk Space of Remote machine
+  hosts: all
+  tasks: 
+    - name: Checking Disk Space by running df -h command
+      command: df -h
+      register: disk_space_output # store disk space as variable using register module
+
+    - name: Print the disk space as output
+      debug: 
+        msg: "{{ disk_space_output.stdout }}"
